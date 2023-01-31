@@ -1,11 +1,6 @@
 const fs = require("fs");
 
 module.exports = (client) => {
-  client.handleCommands = async () => {};
-};
-import fs from "fs";
-
-module.exports = (client) => {
   client.handleCommands = async () => {
     const commandFolders = fs.readdirSync("./src/commands");
     for (const folder of commandFolders) {

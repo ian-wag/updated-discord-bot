@@ -1,12 +1,12 @@
-import fs from "fs";
+const fs = require("fs");
 
 module.exports = (client) => {
   client.handleEvents = async () => {
-    const eventFolder = fs.readdirSync("./src/events");
+    const eventFolders = fs.readdirSync("./src/events");
     for (const folder of eventFolders) {
       const eventFiles = fs
-        .readdirSync(`./src/event/${folder}`)
-        .filter((file) => endsWith(".js"));
+        .readdirSync(`./src/events/${folder}`)
+        .filter((file) => file.endsWith(".js"));
       switch (folder) {
         case "client":
           for (const file of eventFiles) {
