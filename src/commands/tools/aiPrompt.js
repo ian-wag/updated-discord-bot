@@ -32,7 +32,7 @@ module.exports = {
     const answer = response.data.choices[0].text;
 
     await interaction.editReply({
-      content: answer,
+      content: "Prompt: " + prompt + "```" + answer + "```",
     });
   },
 };
